@@ -1,15 +1,15 @@
 /*
   * 000   0
 *   001   1
-*   010   1
+*   010   0
 *   011   1
 *   100   1
 *   101   0
-*   110   0
+*   110   1
 *   111   0
 */
 
-const SIZE = 261;
+const SIZE = 361;
 const REPEAT = 200;
 type ConvertType = 0 | 1;
 type ConvertInput = Array<0 | 1>;
@@ -22,7 +22,7 @@ const CovertAutomaton = (input: ConvertInput): ConvertType => {
   } else if (ComparisonArray(input, [0, 0, 1])) {
     return 1;
   } else if (ComparisonArray(input, [0, 1, 0])) {
-    return 1;
+    return 0;
   } else if (ComparisonArray(input, [0, 1, 1])) {
     return 1;
   } else if (ComparisonArray(input, [1, 0, 0])) {
@@ -30,7 +30,7 @@ const CovertAutomaton = (input: ConvertInput): ConvertType => {
   } else if (ComparisonArray(input, [1, 0, 1])) {
     return 0;
   } else if (ComparisonArray(input, [1, 1, 0])) {
-    return 0;
+    return 1;
   } else if (ComparisonArray(input, [1, 1, 1])) {
     return 0;
   } else return 0;
